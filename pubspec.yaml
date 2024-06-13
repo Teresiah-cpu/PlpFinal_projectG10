@@ -64,7 +64,6 @@ flutter:
   assets:
     - assets/images/google.png
     - assets/images/apple.png
-    - assets/images/girl.jpg
     - assets/images/girl2.png
     - assets/images/girl3.png
 
