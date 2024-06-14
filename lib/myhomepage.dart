@@ -15,7 +15,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Text('Welcome to SafeHaven!'),
+        Text('Welcome to She Advocates!'),
         ElevatedButton(
           onPressed: () {
             // Code to navigate to About Us page can be removed since it's handled by the BottomNavigationBar
@@ -37,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('SafeHaven Home'),
+        title: const Text('She Advocates Home'),
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),

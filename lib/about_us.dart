@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'legals.dart';
 
 class AboutUsPage extends StatelessWidget {
-  BuildContext? get context => null;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,6 +27,9 @@ class AboutUsPage extends StatelessWidget {
             _buildSectionHeader('Contact Us'),
             _buildContactInfo('Email', 'support@sheadvocates.com'),
             _buildContactInfo('Phone', '+123 456 7890'),
+            SizedBox(height: 20),
+            _buildSectionHeader('Legal Information'),
+            _buildLegalInfoButton(context),
           ],
         ),
       ),
@@ -64,17 +66,20 @@ class AboutUsPage extends StatelessWidget {
         value,
         style: TextStyle(fontSize: 14),
       ),
-      onTap: () {
-        _copyToClipboard(value, context!);
-      },
     );
   }
 
-  void _copyToClipboard(String value, BuildContext context) {
-    Clipboard.setData(ClipboardData(text: value));
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('$value copied to clipboard'),
+  Widget _buildLegalInfoButton(BuildContext context) {
+    return Center(
+      child: IconButton(
+        icon: Image.asset('assets/court_of_arms.png'),
+        iconSize: 100,
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => LegalInformationPage()),
+          );
+        },
       ),
     );
   }
