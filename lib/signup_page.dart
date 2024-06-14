@@ -7,7 +7,8 @@ class SignUpPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sign Up', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+        title: Text('Sign Up',
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
         backgroundColor: Color(0xFF6A1B9A), // Purple color
         elevation: 0,
       ),
@@ -68,10 +69,10 @@ class SignUpPage extends StatelessWidget {
                 },
                 style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.symmetric(vertical: 15),
+                  backgroundColor: Color(0xFF6A1B9A),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
-                  ),
-                  primary: Color(0xFF6A1B9A), // Purple color
+                  ), // Purple color
                 ),
                 child: Text('Sign Up', style: TextStyle(fontSize: 18)),
               ),
@@ -87,7 +88,8 @@ class SignUpPage extends StatelessWidget {
                   },
                   child: Text(
                     'Already have an account? Login',
-                    style: TextStyle(color: Color(0xFF6A1B9A), fontSize: 16), // Purple color
+                    style: TextStyle(
+                        color: Color(0xFF6A1B9A), fontSize: 16), // Purple color
                   ),
                 ),
               ),

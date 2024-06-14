@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'legals.dart';
+import 'package:gbvapp/legal_information_page.dart';
+import 'legal_process_page.dart';
 
 class AboutUsPage extends StatelessWidget {
   @override
@@ -30,6 +30,9 @@ class AboutUsPage extends StatelessWidget {
             SizedBox(height: 20),
             _buildSectionHeader('Legal Information'),
             _buildLegalInfoButton(context),
+            SizedBox(height: 20),
+            _buildSectionHeader('Interactive Steps'),
+            _buildInteractiveStepsButton(context),
           ],
         ),
       ),
@@ -81,6 +84,18 @@ class AboutUsPage extends StatelessWidget {
           );
         },
       ),
+    );
+  }
+
+  Widget _buildInteractiveStepsButton(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => LegalProcessPage()),
+        );
+      },
+      child: Text('I\'m Hurt - Start Process'),
     );
   }
 }

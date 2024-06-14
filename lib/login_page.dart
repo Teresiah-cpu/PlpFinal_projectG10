@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:gbvapp/signup_page.dart'; 
+import 'package:gbvapp/signup_page.dart';
 import 'package:gbvapp/myhomepage.dart';
 import 'package:gbvapp/components/mybutton.dart';
-import 'components/mytextfield.dart'; 
+import 'components/mytextfield.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({Key? key}) : super(key: key);
@@ -17,7 +17,8 @@ class LoginPage extends StatelessWidget {
     //  Validate username and password, then navigate to the homepage
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => MyHomePage()), // takes you to homepage
+      MaterialPageRoute(
+          builder: (context) => MyHomePage()), // takes you to homepage
     );
   }
 
@@ -26,13 +27,13 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[300],
       body: SafeArea(
-        child: SingleChildScrollView( // Wrapping column with SingleChildScrollView to help scroll when it overflows
+        child: SingleChildScrollView(
+          // Wrapping column with SingleChildScrollView to help scroll when it overflows
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(height: 50),
-                
                 const Icon(
                   Icons.lock,
                   size: 100,
@@ -75,7 +76,7 @@ class LoginPage extends StatelessWidget {
                 ElevatedButton(
                   onPressed: () => signUserIn(context),
                   style: ElevatedButton.styleFrom(
-                    primary: Color(0xFF6A1B9A), // Purple color
+                    backgroundColor: Color(0xFF6A1B9A), // Purple color
                     padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
@@ -109,7 +110,8 @@ class LoginPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => SignUpPage()), // signup page
+                      MaterialPageRoute(
+                          builder: (context) => SignUpPage()), // signup page
                     );
                   },
                   child: Text(
