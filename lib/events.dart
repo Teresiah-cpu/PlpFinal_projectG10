@@ -5,18 +5,13 @@ class EventsPage extends StatefulWidget {
   _EventsPageState createState() => _EventsPageState();
 }
 
-
-
-
-
-
 class _EventsPageState extends State<EventsPage> {
   List<Map<String, String>> events = [
     {
       'title': 'Event 1',
       'description': 'Women empowerment day event',
       'date': '30th June, 2024',
-      'location': 'Lower Kabete,spring Valley Road',
+      'location': 'Lower Kabete, Spring Valley Road',
       'image': 'assets/images/women1.jpg',
     },
     {
@@ -28,7 +23,7 @@ class _EventsPageState extends State<EventsPage> {
     },
     {
       'title': 'Event 3',
-      'description': 'Mental health awreness meet up.',
+      'description': 'Mental health awareness meet up.',
       'date': 'June 25, 2024',
       'location': 'Nairobi Kenya',
       'image': 'assets/images/women1.jpg',
@@ -59,6 +54,7 @@ class _EventsPageState extends State<EventsPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Events Page'),
+        backgroundColor: Colors.purple, // Set theme color to purple
       ),
       body: Column(
         children: [
@@ -82,7 +78,10 @@ class _EventsPageState extends State<EventsPage> {
                   Text(
                     'Upcoming Events',
                     style: TextStyle(
-                        fontSize: 28, fontWeight: FontWeight.bold),
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.purple, // Set text color to purple
+                    ),
                   ),
                   SizedBox(height: 20),
                   ...filteredEvents.map((event) => EventCard(
@@ -147,9 +146,10 @@ class EventCard extends StatelessWidget {
               Text(
                 title,
                 style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.purple),
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.purple, // Set text color to purple
+                ),
               ),
               SizedBox(height: 10),
               Text(
@@ -171,6 +171,9 @@ class EventCard extends StatelessWidget {
                   // Handle RSVP action
                 },
                 child: Text('RSVP'),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.purple, // Set button color to purple
+                ),
               ),
             ],
           ),
@@ -200,6 +203,7 @@ class EventDetailsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
+        backgroundColor: Colors.purple, // Set theme color to purple
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -211,9 +215,10 @@ class EventDetailsPage extends StatelessWidget {
             Text(
               title,
               style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.purple),
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                color: Colors.purple, // Set text color to purple
+              ),
             ),
             SizedBox(height: 10),
             Text(
@@ -235,6 +240,9 @@ class EventDetailsPage extends StatelessWidget {
                 // Handle add to calendar action
               },
               child: Text('Add to Calendar'),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.purple, // Set button color to purple
+              ),
             ),
           ],
         ),
