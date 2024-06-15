@@ -282,7 +282,7 @@ class EventDetailsPage extends StatelessWidget {
             ListView.builder(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
-              itemCount: 5, // For demonstration, we use a fixed number of comments
+              itemCount: 5, // we use a fixed number of comments
               itemBuilder: (context, index) {
                 return ListTile(
                   title: Text('User $index'),
