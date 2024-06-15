@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gbvapp/signup_page.dart'; 
 import 'package:gbvapp/myhomepage.dart';
+// ignore: unused_import
 import 'package:gbvapp/components/mybutton.dart';
 import 'components/mytextfield.dart'; 
 
@@ -75,7 +76,7 @@ class LoginPage extends StatelessWidget {
                 ElevatedButton(
                   onPressed: () => signUserIn(context),
                   style: ElevatedButton.styleFrom(
-                    primary: Color(0xFF6A1B9A), // Purple color
+                    backgroundColor: Color(0xFF6A1B9A), // Purple color
                     padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
