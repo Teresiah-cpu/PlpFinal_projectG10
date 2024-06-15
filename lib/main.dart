@@ -1,6 +1,6 @@
 // main.dart
 import 'package:flutter/material.dart';
-//import 'about_us.dart'; // Import the AboutUsPage
+import 'about_us.dart'; // Import the AboutUsPage
 import 'landingpage.dart';
 import 'myhomepage.dart'; // Import the MyHomePage
 import 'educational_content.dart';
