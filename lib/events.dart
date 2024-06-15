@@ -57,7 +57,7 @@ class _EventsPageState extends State<EventsPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Events Page'),
-        backgroundColor: Colors.purple, // Set theme color to purple
+        backgroundColor: Colors.purple, // theme color purple
       ),
       body: Column(
         children: [
