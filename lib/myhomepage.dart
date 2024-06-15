@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'about_us.dart'; // Import the AboutUsPage
+import 'events.dart'; // Import the EventsPage
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -16,15 +17,10 @@ class _MyHomePageState extends State<MyHomePage> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Text('Welcome to She Advocates!'),
-        ElevatedButton(
-          onPressed: () {
-            // Code to navigate to About Us page can be removed since it's handled by the BottomNavigationBar
-          },
-          child: Text('About Us'),
-        ),
       ],
     ),
     AboutUsPage(), // The About Us Page
+    EventsPage(),  // The Events Page
   ];
 
   void _onItemTapped(int index) {
@@ -51,6 +47,10 @@ class _MyHomePageState extends State<MyHomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.info),
             label: 'About Us',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.event),
+            label: 'Events',
           ),
         ],
         currentIndex: _selectedIndex,
