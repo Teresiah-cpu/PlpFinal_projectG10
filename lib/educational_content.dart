@@ -111,17 +111,17 @@ final List<Map<String, String>> articleList = [
   {
     'title': 'Understanding Women\'s Rights',
     'content': 'An in-depth look at the history and importance of women\'s rights...',
-    'imageUrl': 'Poster_1.jpeg', // Use the local asset path
+    'imageUrl': 'assets/images/Let_it_Go.jpeg', // Use the local asset path
   },
   {
     'title': 'Empowerment Strategies',
     'content': 'Learn about various strategies to empower women in different communities...',
-    'imageUrl': 'mental_health1.jpeg', // Use the local asset path
+    'imageUrl': 'assets/images/mental_health_3.jpeg', // Use the local asset path
   },
   {
     'title': 'Mental Health Awareness',
     'content': 'Mental health is a critical aspect of overall well-being...',
-    'imageUrl': 'mental_health2.jpeg', // Use the local asset path
+    'imageUrl': 'assets/images/mental_health2.jpeg', // Use the local asset path
   },
   // Add more articles here
 ];
