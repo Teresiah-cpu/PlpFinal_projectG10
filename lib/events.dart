@@ -24,14 +24,14 @@ class _EventsPageState extends State<EventsPage> {
       'description': 'Meet and greet event.',
       'date': 'June 22, 2024',
       'location': 'KICC',
-      'image': 'assets/images/girl2.png',
+      'image': 'assets/images/women1.jpg',
     },
     {
       'title': 'Event 3',
       'description': 'Mental health awreness meet up.',
       'date': 'June 25, 2024',
       'location': 'Nairobi Kenya',
-      'image': 'assets/images/girl6.jpg',
+      'image': 'assets/images/women1.jpg',
     },
   ];
 
