@@ -127,7 +127,7 @@ class EventCard extends StatelessWidget {
     return Card(
       elevation: 4,
       margin: EdgeInsets.symmetric(vertical: 10),
-      child: InkWell(
+      child: InkWell( //Makes the card clickable, taking you to the event details page when tappe
         onTap: () {
           Navigator.push(
             context,
@@ -280,7 +280,7 @@ class EventDetailsPage extends StatelessWidget {
               ),
             ),
             ListView.builder(
-              shrinkWrap: true,
+              shrinkWrap: true,  //  shrinkWrap is set to true, it tells the widget to take up only as much space as its children need, rather than expanding to fill its parent.
               physics: NeverScrollableScrollPhysics(),
               itemCount: 5, // we use a fixed number of comments
               itemBuilder: (context, index) {
