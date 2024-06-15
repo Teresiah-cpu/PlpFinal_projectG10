@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'about_us.dart'; // Import the AboutUsPage
 import 'events.dart'; // Import the EventsPage
+import 'educational_content.dart';  
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -21,6 +22,7 @@ class _MyHomePageState extends State<MyHomePage> {
     ),
     AboutUsPage(), // The About Us Page
     EventsPage(),  // The Events Page
+    EducationalContent(),  // The Educational Content Page
   ];
 
   void _onItemTapped(int index) {
@@ -51,6 +53,10 @@ class _MyHomePageState extends State<MyHomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.event),
             label: 'Events',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.school),
+            label: 'Educational Content',
           ),
         ],
         currentIndex: _selectedIndex,
