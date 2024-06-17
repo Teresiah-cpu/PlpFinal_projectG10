@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'about_us.dart'; // Import the AboutUsPage
 import 'events.dart'; // Import the EventsPage
+<<<<<<< HEAD
 import 'get_involved.dart'; // Import the GetInvolvedPage
+=======
+import 'educational_content.dart';
+import 'settings.dart';
+>>>>>>> Ruth
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -17,6 +22,8 @@ class _MyHomePageState extends State<MyHomePage> {
     HomeContent(), 
     AboutUsPage(), // The About Us Page
     EventsPage(),  // The Events Page
+    EducationalContent(), 
+    SettingsScreen(),  // The Settings Page
   ];
 
   void _onItemTapped(int index) {
@@ -30,7 +37,18 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('She Advocates Home'),
+<<<<<<< HEAD
         backgroundColor: Colors.purple,
+=======
+        actions: [
+          IconButton(
+            icon: Icon(Icons.settings),
+            onPressed: () {
+              Navigator.pushNamed(context, '/settings'); // Navigate to SettingsScreen
+            },
+          ),
+        ],
+>>>>>>> Ruth
       ),
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
@@ -46,6 +64,14 @@ class _MyHomePageState extends State<MyHomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.event),
             label: 'Events',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.school),
+            label: 'Educational Content',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Settings',
           ),
         ],
         currentIndex: _selectedIndex,

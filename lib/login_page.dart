@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'signup_page.dart';
 import 'myhomepage.dart';
 import 'components/mytextfield.dart';
+=======
+import 'package:gbvapp/signup_page.dart'; 
+import 'package:gbvapp/myhomepage.dart';
+// ignore: unused_import
+import 'package:gbvapp/components/mybutton.dart';
+import 'components/mytextfield.dart'; 
+>>>>>>> Ruth
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);
@@ -61,9 +69,50 @@ class _LoginPageState extends State<LoginPage> {
                     size: 100,
                     color: Color(0xFF6A1B9A), // Purple color
                   ),
+<<<<<<< HEAD
                   const SizedBox(height: 50),
                   Text(
                     'Welcome back to Empower Her!',
+=======
+                ),
+                const SizedBox(height: 25),
+                MyTextField(
+                  controller: usernameController,
+                  hintText: 'Username',
+                  obscureText: false,
+                ),
+                const SizedBox(height: 10),
+                MyTextField(
+                  controller: passwordController,
+                  hintText: 'Password',
+                  obscureText: true,
+                ),
+                const SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        'Forgot Password?',
+                        style: TextStyle(color: Colors.grey[600]),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 25),
+                ElevatedButton(
+                  onPressed: () => signUserIn(context),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xFF6A1B9A), // Purple color
+                    padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                  ),
+                  child: Text(
+                    'Sign In',
+>>>>>>> Ruth
                     style: TextStyle(
                       color: Colors.grey[700],
                       fontSize: 16,
