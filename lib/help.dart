@@ -65,7 +65,7 @@ class HelpSettings extends StatelessWidget {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text('Contact Support'),
-          content: Text('For support inquiries, please email support@example.com.'),
+          content: Text('For support inquiries, please email sheadvocate@gmail.com.'),
           actions: <Widget>[
             TextButton(
               child: Text('Close'),
