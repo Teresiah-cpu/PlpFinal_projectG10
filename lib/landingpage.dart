@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'login_page.dart';
+import 'signup_page.dart';
 import 'sos.dart';
 
 class LandingPage extends StatelessWidget {
@@ -59,7 +59,7 @@ class LandingPage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return LoginPage();
+                      return SignUpPage();
                     },
                   ),
                 ),
