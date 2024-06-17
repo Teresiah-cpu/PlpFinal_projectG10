@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gbvapp/login_page.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'myhomepage.dart'; // Import the MyHomePage
+import 'signup_page.dart';
+import 'sos.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({Key? key}) : super(key: key);
@@ -59,7 +60,7 @@ class LandingPage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return LoginPage(); // Navigate to MyHomePage
+                      return SignUpPage();
                     },
                   ),
                 ),
@@ -71,6 +72,35 @@ class LandingPage extends StatelessWidget {
                   ),
                   child: const Text(
                     "Get Started",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+              ),
+
+              const SizedBox(height: 50), // space after the button
+
+              // SOS Button
+              GestureDetector(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return SosBuzzerPage();
+                    },
+                  ),
+                ),
+                child: Container(
+                  padding: const EdgeInsets.all(24),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: Colors.red, // Red color for SOS button
+                  ),
+                  child: const Text(
+                    "SOS",
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
