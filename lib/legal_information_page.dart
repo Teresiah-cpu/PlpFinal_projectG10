@@ -27,6 +27,9 @@ class LegalInformationPage extends StatelessWidget {
             '3. Legal aid services are available to support you.\n'
             '4. Confidentiality and privacy should be maintained throughout the process.',
           ),
+          const SizedBox(height: 20),
+          _buildSectionHeader('Legal Process Image'),
+          Image.asset('assets/images/legalimage.png'),
         ],
       ),
     );
