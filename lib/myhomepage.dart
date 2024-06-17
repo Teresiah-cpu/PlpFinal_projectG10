@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'about_us.dart'; // Import the About Us Page
-import 'sos.dart'; // Import the SOS Buzzer Page
+import 'about_us.dart'; // Import the AboutUsPage
+import 'events.dart'; // Import the EventsPage
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -13,8 +13,14 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
 
   static final List<Widget> _widgetOptions = <Widget>[
-    HomeScreen(),
-    AboutUsPage(),
+    Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Text('Welcome to She Advocates!'),
+      ],
+    ),
+    AboutUsPage(), // The About Us Page
+    EventsPage(),  // The Events Page
   ];
 
   void _onItemTapped(int index) {
@@ -27,7 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('SafeHaven Home'),
+        title: const Text('She Advocates Home'),
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
@@ -42,6 +48,10 @@ class _MyHomePageState extends State<MyHomePage> {
             icon: Icon(Icons.info),
             label: 'About Us',
           ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.event),
+            label: 'Events',
+          ),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.blue,
@@ -50,29 +60,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-class HomeScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Text('Welcome to SafeHaven!'),
-        SizedBox(height: 20),
-        ElevatedButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => SosBuzzerPage()),
-            );
-          },
-          child: Text('Send SOS Alert'),
-        ),
-        SizedBox(height: 20),
-        Text('Press the button to send an SOS alert'),
-      ],
-    );
-  }
-}
-
-
