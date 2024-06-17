@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'about_us.dart'; // Import the AboutUsPage
 import 'events.dart'; // Import the EventsPage
-import 'educational_content.dart';  
+import 'educational_content.dart';
+import 'settings.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -22,7 +23,8 @@ class _MyHomePageState extends State<MyHomePage> {
     ),
     AboutUsPage(), // The About Us Page
     EventsPage(),  // The Events Page
-    EducationalContent(),  // The Educational Content Page
+    EducationalContent(), 
+    SettingsScreen(),  // The Settings Page
   ];
 
   void _onItemTapped(int index) {
@@ -36,6 +38,14 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('She Advocates Home'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.settings),
+            onPressed: () {
+              Navigator.pushNamed(context, '/settings'); // Navigate to SettingsScreen
+            },
+          ),
+        ],
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
@@ -57,6 +67,10 @@ class _MyHomePageState extends State<MyHomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.school),
             label: 'Educational Content',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Settings',
           ),
         ],
         currentIndex: _selectedIndex,

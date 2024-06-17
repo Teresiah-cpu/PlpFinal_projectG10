@@ -1,9 +1,10 @@
-// main.dart
 import 'package:flutter/material.dart';
 import 'about_us.dart'; // Import the AboutUsPage
 import 'landingpage.dart';
 import 'myhomepage.dart'; // Import the MyHomePage
 import 'educational_content.dart';
+import 'settings.dart'; // Import the SettingsScreen
+
 void main() {
   runApp(MyApp());
 }
@@ -18,9 +19,10 @@ class MyApp extends StatelessWidget {
       ),
       home: LandingPage(),
       routes: {
-        '/about_us': ( context) => AboutUsPage(),
-        '/my_homepage': ( context) => MyHomePage(),
-        '/educational_content': ( context) => EducationalContent(),
+        '/about_us': (context) => AboutUsPage(),
+        '/my_homepage': (context) => MyHomePage(),
+        '/educational_content': (context) => EducationalContent(),
+        '/settings': (context) => SettingsScreen(), // Add this line
       },
     );
   }
