@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:io';
 
 class SettingsScreen extends StatefulWidget {
   @override
@@ -132,7 +134,24 @@ class _SettingsScreenState extends State<SettingsScreen> {
   }
 }
 
-class _ProfileSettings extends StatelessWidget {
+class _ProfileSettings extends StatefulWidget {
+  @override
+  __ProfileSettingsState createState() => __ProfileSettingsState();
+}
+
+class __ProfileSettingsState extends State<_ProfileSettings> {
+  File? _image;
+
+  Future<void> _pickImage() async {
+    final pickedFile = await ImagePicker().pickImage(source: ImageSource.gallery);
+
+    if (pickedFile != null) {
+      setState(() {
+        _image = File(pickedFile.path);
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -147,10 +166,11 @@ class _ProfileSettings extends StatelessWidget {
             ),
           ),
           SizedBox(height: 16),
+          _image != null
+              ? Image.file(_image!, height: 100)
+              : Container(),
           ElevatedButton(
-            onPressed: () {
-              // Implement avatar change functionality
-            },
+            onPressed: _pickImage,
             child: Text('Change Avatar'),
           ),
         ],
@@ -159,7 +179,14 @@ class _ProfileSettings extends StatelessWidget {
   }
 }
 
-class _NotificationSettings extends StatelessWidget {
+class _NotificationSettings extends StatefulWidget {
+  @override
+  __NotificationSettingsState createState() => __NotificationSettingsState();
+}
+
+class __NotificationSettingsState extends State<_NotificationSettings> {
+  bool _notificationsEnabled = true;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -170,9 +197,11 @@ class _NotificationSettings extends StatelessWidget {
         children: <Widget>[
           SwitchListTile(
             title: Text('Enable Notifications'),
-            value: true, // Replace with a variable
+            value: _notificationsEnabled,
             onChanged: (bool value) {
-              // Handle the change
+              setState(() {
+                _notificationsEnabled = value;
+              });
             },
           ),
           ListTile(
@@ -198,6 +227,18 @@ class _LanguageSettings extends StatelessWidget {
         children: <Widget>[
           Text('Select Language'),
           // Add your language selection widgets here
+          ListTile(
+            title: Text('English'),
+            onTap: () {
+              // Set language to English
+            },
+          ),
+          ListTile(
+            title: Text('Spanish'),
+            onTap: () {
+              // Set language to Spanish
+            },
+          ),
         ],
       ),
     );
@@ -232,6 +273,15 @@ class _AppearanceSettings extends StatelessWidget {
         children: <Widget>[
           Text('Appearance Settings'),
           // Add your appearance widgets here
+          ListTile(
+            title: Text('Dark Mode'),
+            trailing: Switch(
+              value: false,
+              onChanged: (bool value) {
+                // Handle dark mode toggle
+              },
+            ),
+          ),
         ],
       ),
     );
