@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'volunteer.dart'; // Import Volunteer Page
+import 'donate.dart'; // Import Donate Page
+import 'join_membership.dart'; // Import Join Membership Page
+import 'events.dart'; // Import Events Page
 
 class GetInvolvedPage extends StatelessWidget {
   @override
@@ -32,7 +36,10 @@ class GetInvolvedPage extends StatelessWidget {
               title: Text('Volunteer with Us'),
               subtitle: Text('Join our team of dedicated volunteers.'),
               onTap: () {
-                // Navigate to volunteer page or show more details
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => VolunteerPage()),
+                );
               },
             ),
             ListTile(
@@ -40,15 +47,21 @@ class GetInvolvedPage extends StatelessWidget {
               title: Text('Donate'),
               subtitle: Text('Support our mission with a donation.'),
               onTap: () {
-                // Navigate to donation page or show more details
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => DonatePage()),
+                );
               },
             ),
             ListTile(
-              leading: Icon(Icons.people, color: Colors.purple),
+              leading: Icon(Icons.event_seat_rounded, color: Colors.purple),
               title: Text('Attend Events'),
               subtitle: Text('Participate in our upcoming events.'),
               onTap: () {
-                // Navigate to events page or show more details
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => EventsPage()),
+                );
               },
             ),
             ListTile(
@@ -56,7 +69,10 @@ class GetInvolvedPage extends StatelessWidget {
               title: Text('Become a Member'),
               subtitle: Text('Join our membership program.'),
               onTap: () {
-                // Navigate to membership page or show more details
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => JoinMembershipPage()),
+                );
               },
             ),
           ],
