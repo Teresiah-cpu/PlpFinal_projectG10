@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gbvapp/login_page.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'myhomepage.dart'; // Import the MyHomePag
 import 'signup_page.dart';
 import 'sos.dart';
 
@@ -59,6 +61,7 @@ class LandingPage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
+                      return LoginPage(); // Navigate to MyHomePage
                       return SignUpPage();
                     },
                   ),
