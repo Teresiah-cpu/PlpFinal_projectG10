@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gbvapp/login_page.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'login_page.dart';
+import 'myhomepage.dart'; // Import the MyHomePage
 
 class LandingPage extends StatelessWidget {
   const LandingPage({Key? key}) : super(key: key);
@@ -58,7 +59,7 @@ class LandingPage extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return LoginPage();
+                      return LoginPage(); // Navigate to MyHomePage
                     },
                   ),
                 ),

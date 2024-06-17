@@ -1,7 +1,5 @@
-// main.dart
 import 'package:flutter/material.dart';
-//import 'about_us.dart'; // Import the AboutUsPage
-import 'landingpage.dart';
+import 'landingpage.dart'; // Import the LandingPage
 import 'myhomepage.dart'; // Import the MyHomePage
 
 void main() {
@@ -14,9 +12,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'She Advocates',
       theme: ThemeData(
-        primarySwatch: Colors.purple
+        primarySwatch: Colors.purple,
       ),
-      home: LandingPage(),
+      home: LandingPage(), // Initial page
     );
   }
 }
