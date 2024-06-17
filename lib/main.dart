@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
-import 'landingpage.dart'; // Import the LandingPage
-import 'myhomepage.dart'; // Import the MyHomePage
+import 'donate.dart';
+import 'events.dart';
+import 'get_involved.dart';
+import 'join_membership.dart';
+import 'landingpage.dart';
+import 'myhomepage.dart';
+import 'volunteer.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +19,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.purple,
       ),
-      home: LandingPage(), // Initial page
+      home: LandingPage(),
+      routes: {
+        '/home': (context) => MyHomePage(),
+        '/get_involved': (context) => GetInvolvedPage(),
+        '/volunteer': (context) => VolunteerPage(),
+        '/donate': (context) => DonatePage(),
+        '/events': (context) => EventsPage(),
+        '/join_membership': (context) => JoinMembershipPage(),
+      },
     );
   }
 }
