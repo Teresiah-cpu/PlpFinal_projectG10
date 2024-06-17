@@ -25,6 +25,10 @@ class PrivacySettings extends StatelessWidget {
               trailing: Icon(Icons.arrow_forward),
               onTap: () {
                 // Navigate to change password screen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ChangePasswordScreen()),
+                );
               },
             ),
             ListTile(
@@ -32,6 +36,10 @@ class PrivacySettings extends StatelessWidget {
               trailing: Icon(Icons.arrow_forward),
               onTap: () {
                 // Navigate to privacy policy screen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => PrivacyPolicyScreen()),
+                );
               },
             ),
             ListTile(
@@ -39,10 +47,57 @@ class PrivacySettings extends StatelessWidget {
               trailing: Icon(Icons.arrow_forward),
               onTap: () {
                 // Navigate to terms of service screen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => TermsOfServiceScreen()),
+                );
               },
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+// Dummy screens for demonstration purposes
+class ChangePasswordScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Change Password'),
+      ),
+      body: Center(
+        child: Text('Change Password Screen'),
+      ),
+    );
+  }
+}
+
+class PrivacyPolicyScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Privacy Policy'),
+      ),
+      body: Center(
+        child: Text('Privacy Policy Screen'),
+      ),
+    );
+  }
+}
+
+class TermsOfServiceScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Terms of Service'),
+      ),
+      body: Center(
+        child: Text('Terms of Service Screen'),
       ),
     );
   }
