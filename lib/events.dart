@@ -57,7 +57,11 @@ class _EventsPageState extends State<EventsPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Events Page'),
+        // Fix for AppBar background color
         backgroundColor: Colors.purple,
+        // Replace deprecated backgroundColor with background
+        foregroundColor: Colors.white,
+        elevation: 4.0,
       ),
       body: Column(
         children: [
@@ -191,7 +195,7 @@ class EventCard extends StatelessWidget {
                     child: Text('RSVP'),
                     style: ElevatedButton.styleFrom(
                       primary: Colors.purple,
-                      backgroundColor: Colors.purple, // Set button color to purple
+                      onPrimary: Colors.white,
                     ),
                   ),
                   IconButton(
@@ -231,6 +235,8 @@ class EventDetailsPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(title),
         backgroundColor: Colors.purple,
+        foregroundColor: Colors.white,
+        elevation: 4.0,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
@@ -268,7 +274,8 @@ class EventDetailsPage extends StatelessWidget {
               },
               child: Text('Add to Calendar'),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.purple, // Set button color to purple
+                primary: Colors.purple,
+                onPrimary: Colors.white,
               ),
             ),
             SizedBox(height: 20),

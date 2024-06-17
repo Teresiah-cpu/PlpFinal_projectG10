@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'signup_page.dart'; 
+import 'signup_page.dart';
 import 'myhomepage.dart';
-import 'components/mytextfield.dart'; 
+import 'components/mytextfield.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);
@@ -48,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       backgroundColor: Colors.grey[300],
       body: SafeArea(
-        child: SingleChildScrollView( // Wrapping column with SingleChildScrollView to help scroll when it overflows
+        child: SingleChildScrollView(
           child: Center(
             child: Form(
               key: _formKey,
@@ -56,7 +56,6 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const SizedBox(height: 50),
-                  
                   const Icon(
                     Icons.lock,
                     size: 100,
@@ -89,7 +88,6 @@ class _LoginPageState extends State<LoginPage> {
                     controller: passwordController,
                     hintText: 'Password',
                     obscureText: true,
-
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return 'Please enter your password';
@@ -115,11 +113,15 @@ class _LoginPageState extends State<LoginPage> {
                   const SizedBox(height: 25),
                   ElevatedButton(
                     onPressed: () => signUserIn(context),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFF6A1B9A), // Purple color
-                      padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF6A1B9A)), // Purple color
+                      padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                        EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                      ),
+                      shape: MaterialStateProperty.all<OutlinedBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16),
+                        ),
                       ),
                     ),
                     child: Text(
