@@ -1,15 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:gbvapp/signup_page.dart'; 
 import 'package:gbvapp/myhomepage.dart';
-import 'package:gbvapp/components/mybutton.dart';
 import 'components/mytextfield.dart'; 
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);
 
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
   // text editing controllers
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    // Clean up the controllers when the widget is disposed.
+    usernameController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
 
   // sign user in method
   void signUserIn(BuildContext context) {
@@ -75,7 +87,7 @@ class LoginPage extends StatelessWidget {
                 ElevatedButton(
                   onPressed: () => signUserIn(context),
                   style: ElevatedButton.styleFrom(
-                    primary: Color(0xFF6A1B9A), // Purple color
+                    backgroundColor: Color(0xFF6A1B9A), // Purple color
                     padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
