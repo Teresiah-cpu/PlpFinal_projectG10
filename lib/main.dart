@@ -1,6 +1,5 @@
 // main.dart
-import 'package:flutter/material.dart';
-import 'about_us.dart'; // Import the AboutUsPage
+import 'package:flutter/material.dart'; // Import the AboutUsPage
 import 'myhomepage.dart'; // Import the MyHomePage
 void main() {
   runApp(MyApp());

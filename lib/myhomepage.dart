@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'about_us.dart'; // Import the AboutUsPage
+import 'about_us.dart'; // Import the About Us Page
+import 'sos.dart'; // Import the SOS Buzzer Page
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -12,19 +13,8 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
 
   static final List<Widget> _widgetOptions = <Widget>[
-    Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Text('Welcome to SafeHaven!'),
-        ElevatedButton(
-          onPressed: () {
-            // Code to navigate to About Us page can be removed since it's handled by the BottomNavigationBar
-          },
-          child: Text('About Us'),
-        ),
-      ],
-    ),
-    AboutUsPage(), // The About Us Page
+    HomeScreen(),
+    AboutUsPage(),
   ];
 
   void _onItemTapped(int index) {
@@ -60,3 +50,29 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Text('Welcome to SafeHaven!'),
+        SizedBox(height: 20),
+        ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SosBuzzerPage()),
+            );
+          },
+          child: Text('Send SOS Alert'),
+        ),
+        SizedBox(height: 20),
+        Text('Press the button to send an SOS alert'),
+      ],
+    );
+  }
+}
+
+
