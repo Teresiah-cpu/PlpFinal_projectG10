@@ -10,6 +10,19 @@ class _FeedbackSettingsState extends State<FeedbackSettings> {
   String? _feedback;
   double _rating = 3.0;
 
+  void _submitFeedback() {
+    if (_formKey.currentState!.validate()) {
+      _formKey.currentState!.save();
+      // Here you can handle the feedback submission (e.g., send it to a server)
+      print('Feedback: $_feedback');
+      print('Rating: $_rating');
+      // Show a confirmation message
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Thank you for your feedback!')),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,12 +64,7 @@ class _FeedbackSettingsState extends State<FeedbackSettings> {
               ),
               SizedBox(height: 16),
               ElevatedButton(
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    _formKey.currentState!.save();
-                    // Submit feedback
-                  }
-                },
+                onPressed: _submitFeedback,
                 child: Text('Submit'),
               ),
             ],
