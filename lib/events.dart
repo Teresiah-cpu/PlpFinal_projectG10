@@ -57,7 +57,7 @@ class _EventsPageState extends State<EventsPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Events Page'),
-        backgroundColor: Colors.purple, // theme color purple
+        backgroundColor: Colors.purple,
       ),
       body: Column(
         children: [
@@ -83,7 +83,7 @@ class _EventsPageState extends State<EventsPage> {
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
-                      color: Colors.purple, // Set text color to purple
+                      color: Colors.purple,
                     ),
                   ),
                   SizedBox(height: 20),
@@ -127,7 +127,7 @@ class EventCard extends StatelessWidget {
     return Card(
       elevation: 4,
       margin: EdgeInsets.symmetric(vertical: 10),
-      child: InkWell( //Makes the card clickable, taking you to the event details page when tappe
+      child: InkWell(
         onTap: () {
           Navigator.push(
             context,
@@ -154,7 +154,7 @@ class EventCard extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Colors.purple, // Set text color to purple
+                  color: Colors.purple,
                 ),
               ),
               SizedBox(height: 10),
@@ -190,7 +190,7 @@ class EventCard extends StatelessWidget {
                     },
                     child: Text('RSVP'),
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.purple, // Set button color to purple
+                      primary: Colors.purple,
                     ),
                   ),
                   IconButton(
@@ -229,7 +229,7 @@ class EventDetailsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
-        backgroundColor: Colors.purple, // Set theme color to purple
+        backgroundColor: Colors.purple,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
@@ -243,7 +243,7 @@ class EventDetailsPage extends StatelessWidget {
               style: TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
-                color: Colors.purple, // Set text color to purple
+                color: Colors.purple,
               ),
             ),
             SizedBox(height: 10),
@@ -267,7 +267,7 @@ class EventDetailsPage extends StatelessWidget {
               },
               child: Text('Add to Calendar'),
               style: ElevatedButton.styleFrom(
-                primary: Colors.purple, // Set button color to purple
+                primary: Colors.purple,
               ),
             ),
             SizedBox(height: 20),
@@ -280,9 +280,9 @@ class EventDetailsPage extends StatelessWidget {
               ),
             ),
             ListView.builder(
-              shrinkWrap: true,  //  shrinkWrap is set to true, it tells the widget to take up only as much space as its children need, rather than expanding to fill its parent.
+              shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
-              itemCount: 5, // we use a fixed number of comments
+              itemCount: 5,
               itemBuilder: (context, index) {
                 return ListTile(
                   title: Text('User $index'),
@@ -295,4 +295,11 @@ class EventDetailsPage extends StatelessWidget {
       ),
     );
   }
+}
+
+void main() {
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: EventsPage(),
+  ));
 }
