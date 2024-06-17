@@ -74,7 +74,7 @@ class HomeContent extends StatelessWidget {
               ),
             ),
             SizedBox(height: 20),
-            Image.network('https://via.placeholder.com/400x200', height: 200, width: 400),
+            Image.network('https://media.istockphoto.com/id/1871948873/photo/group-of-businesswomen-meeting-in-the-office.webp?b=1&s=170667a&w=0&k=20&c=UVJ8wuJLyk4kxVLv8WthRiS4eJrbRETCdUtaNlZv1x0=', height: 200, width: 400),
             SizedBox(height: 20),
             Text(
               'Empowering Women, One Step at a Time',
@@ -82,7 +82,7 @@ class HomeContent extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 20),
-            Image.network('https://via.placeholder.com/400x200', height: 200, width: 400),
+            Image.network('https://media.istockphoto.com/id/1950525700/photo/multiracial-women-posing-in-the-office-while-looking-into-the-camera.jpg?s=612x612&w=0&k=20&c=2fkz8aIl3CHC09cB2Q8ruSGgjTrI7OQgrxirS7Q5Yg0=', height: 200, width: 400),
             SizedBox(height: 20),
             Text(
               'Join us in our journey to uplift and support women in all spheres of life.',

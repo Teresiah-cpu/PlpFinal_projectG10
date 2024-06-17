@@ -13,7 +13,7 @@ class VolunteerPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.network('https://via.placeholder.com/400x200', height: 200, width: 400),
+            Image.network('https://media.istockphoto.com/id/871518164/photo/volunteers-helping-out-for-charity.jpg?s=612x612&w=0&k=20&c=QZNwGN1S8enKbyiIVJfQjVaaBdxNH11Kufhh30KlmgQ=', height: 200, width: 400),
             SizedBox(height: 20),
             Text(
               'Volunteer with Us',

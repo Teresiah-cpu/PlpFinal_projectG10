@@ -13,7 +13,7 @@ class JoinMembershipPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.network('https://via.placeholder.com/400x200', height: 200, width: 400),
+            Image.network('https://media.istockphoto.com/id/1432208095/photo/army-doctor-playing-with-refugee-children-at-a-community-center.jpg?s=612x612&w=0&k=20&c=T9PU1CGNuf74yzyD3EJZK_5s7fvAo9tSJFTY-aAM04o=', height: 200, width: 400),
             SizedBox(height: 20),
             Text(
               'Become a Member',
