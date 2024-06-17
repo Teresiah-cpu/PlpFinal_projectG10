@@ -5,19 +5,15 @@ class EventsPage extends StatefulWidget {
   _EventsPageState createState() => _EventsPageState();
 }
 
-
-
-
-
-
 class _EventsPageState extends State<EventsPage> {
-  List<Map<String, String>> events = [
+  List<Map<String, dynamic>> events = [
     {
       'title': 'Event 1',
       'description': 'Women empowerment day event',
       'date': '30th June, 2024',
-      'location': 'Lower Kabete,spring Valley Road',
+      'location': 'Lower Kabete, Spring Valley Road',
       'image': 'assets/images/women1.jpg',
+      'category': 'Empowerment',
     },
     {
       'title': 'Event 2',
@@ -25,17 +21,19 @@ class _EventsPageState extends State<EventsPage> {
       'date': 'June 22, 2024',
       'location': 'KICC',
       'image': 'assets/images/women1.jpg',
+      'category': 'Networking',
     },
     {
       'title': 'Event 3',
-      'description': 'Mental health awreness meet up.',
+      'description': 'Mental health awareness meet up.',
       'date': 'June 25, 2024',
       'location': 'Nairobi Kenya',
       'image': 'assets/images/women1.jpg',
+      'category': 'Health',
     },
   ];
 
-  List<Map<String, String>> filteredEvents = [];
+  List<Map<String, dynamic>> filteredEvents = [];
 
   @override
   void initState() {
@@ -44,7 +42,7 @@ class _EventsPageState extends State<EventsPage> {
   }
 
   void _filterEvents(String query) {
-    List<Map<String, String>> filteredList = events
+    List<Map<String, dynamic>> filteredList = events
         .where((event) =>
             event['title']!.toLowerCase().contains(query.toLowerCase()) ||
             event['description']!.toLowerCase().contains(query.toLowerCase()))
@@ -59,6 +57,11 @@ class _EventsPageState extends State<EventsPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Events Page'),
+        // Fix for AppBar background color
+        backgroundColor: Colors.purple,
+        // Replace deprecated backgroundColor with background
+        foregroundColor: Colors.white,
+        elevation: 4.0,
       ),
       body: Column(
         children: [
@@ -82,7 +85,10 @@ class _EventsPageState extends State<EventsPage> {
                   Text(
                     'Upcoming Events',
                     style: TextStyle(
-                        fontSize: 28, fontWeight: FontWeight.bold),
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.purple,
+                    ),
                   ),
                   SizedBox(height: 20),
                   ...filteredEvents.map((event) => EventCard(
@@ -91,6 +97,7 @@ class _EventsPageState extends State<EventsPage> {
                         date: event['date']!,
                         location: event['location']!,
                         image: event['image']!,
+                        category: event['category']!,
                       )),
                 ],
               ),
@@ -108,6 +115,7 @@ class EventCard extends StatelessWidget {
   final String date;
   final String location;
   final String image;
+  final String category;
 
   EventCard({
     required this.title,
@@ -115,6 +123,7 @@ class EventCard extends StatelessWidget {
     required this.date,
     required this.location,
     required this.image,
+    required this.category,
   });
 
   @override
@@ -147,9 +156,19 @@ class EventCard extends StatelessWidget {
               Text(
                 title,
                 style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.purple),
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.purple,
+                ),
+              ),
+              SizedBox(height: 10),
+              Text(
+                category,
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.purple.shade200,
+                ),
               ),
               SizedBox(height: 10),
               Text(
@@ -166,11 +185,26 @@ class EventCard extends StatelessWidget {
                 style: TextStyle(fontSize: 16, color: Colors.grey),
               ),
               SizedBox(height: 10),
-              ElevatedButton(
-                onPressed: () {
-                  // Handle RSVP action
-                },
-                child: Text('RSVP'),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      // Handle RSVP action
+                    },
+                    child: Text('RSVP'),
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.purple,
+                      onPrimary: Colors.white,
+                    ),
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.share, color: Colors.purple),
+                    onPressed: () {
+                      // Handle share action
+                    },
+                  ),
+                ],
               ),
             ],
           ),
@@ -200,8 +234,11 @@ class EventDetailsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
+        backgroundColor: Colors.purple,
+        foregroundColor: Colors.white,
+        elevation: 4.0,
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -211,9 +248,10 @@ class EventDetailsPage extends StatelessWidget {
             Text(
               title,
               style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.purple),
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                color: Colors.purple,
+              ),
             ),
             SizedBox(height: 10),
             Text(
@@ -235,10 +273,41 @@ class EventDetailsPage extends StatelessWidget {
                 // Handle add to calendar action
               },
               child: Text('Add to Calendar'),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.purple,
+                onPrimary: Colors.white,
+              ),
+            ),
+            SizedBox(height: 20),
+            Text(
+              'Comments & Reviews',
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                color: Colors.purple,
+              ),
+            ),
+            ListView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              itemCount: 5,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text('User $index'),
+                  subtitle: Text('This is a comment/review.'),
+                );
+              },
             ),
           ],
         ),
       ),
     );
   }
+}
+
+void main() {
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: EventsPage(),
+  ));
 }
