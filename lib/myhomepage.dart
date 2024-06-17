@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'about_us.dart'; // Import the AboutUsPage
 import 'events.dart'; // Import the EventsPage
+import 'get_involved.dart'; // Import the GetInvolvedPage
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -90,7 +91,12 @@ class HomeContent extends StatelessWidget {
             ),
             SizedBox(height: 20),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => GetInvolvedPage()),
+                );
+              },
               style: ElevatedButton.styleFrom(
                 primary: Colors.purple,
                 padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
