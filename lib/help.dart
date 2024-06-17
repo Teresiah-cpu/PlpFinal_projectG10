@@ -9,11 +9,36 @@ class HelpSettings extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
           children: <Widget>[
-            Text('Help and Support'),
-            // Add your help and support widgets here
+            ListTile(
+              title: Text('FAQs'),
+              trailing: Icon(Icons.arrow_forward),
+              onTap: () {
+                // Navigate to FAQs screen
+              },
+            ),
+            ListTile(
+              title: Text('Contact Support'),
+              trailing: Icon(Icons.arrow_forward),
+              onTap: () {
+                // Navigate to contact support screen or open email
+              },
+            ),
+            ListTile(
+              title: Text('Documentation'),
+              trailing: Icon(Icons.arrow_forward),
+              onTap: () {
+                // Navigate to documentation screen
+              },
+            ),
+            ListTile(
+              title: Text('Community Forums'),
+              trailing: Icon(Icons.arrow_forward),
+              onTap: () {
+                // Navigate to forums screen
+              },
+            ),
           ],
         ),
       ),

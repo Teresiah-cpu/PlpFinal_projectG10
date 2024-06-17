@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'profile_settings.dart';
-import 'notification_settings.dart';
-import 'privacy_settings.dart';
-import 'help_settings.dart';
-import 'feedback_settings.dart';
+import 'notifications.dart';
+import 'privacy.dart';
+import 'help.dart';
+import 'feedback.dart';
 
 class SettingsScreen extends StatefulWidget {
   @override
