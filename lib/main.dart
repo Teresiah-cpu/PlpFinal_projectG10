@@ -1,8 +1,11 @@
-// main.dart
 import 'package:flutter/material.dart';
-//import 'about_us.dart'; // Import the AboutUsPage
+import 'donate.dart';
+import 'events.dart';
+import 'get_involved.dart';
+import 'join_membership.dart';
 import 'landingpage.dart';
-import 'myhomepage.dart'; // Import the MyHomePage
+import 'myhomepage.dart';
+import 'volunteer.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,9 +17,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'She Advocates',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
       ),
       home: LandingPage(),
+      routes: {
+        '/home': (context) => MyHomePage(),
+        '/get_involved': (context) => GetInvolvedPage(),
+        '/volunteer': (context) => VolunteerPage(),
+        '/donate': (context) => DonatePage(),
+        '/events': (context) => EventsPage(),
+        '/join_membership': (context) => JoinMembershipPage(),
+      },
     );
   }
 }

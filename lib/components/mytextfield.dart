@@ -9,7 +9,7 @@ class MyTextField extends StatelessWidget {
     Key? key,
     required this.controller,
     required this.hintText,
-    required this.obscureText,
+    required this.obscureText, required String? Function(dynamic value) validator,
   }) : super(key: key);
 
   @override
