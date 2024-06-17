@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'login_page.dart';
-import 'myhomepage.dart';
 
 class SignUpPage extends StatefulWidget {
   @override
@@ -35,11 +34,14 @@ class _SignUpPageState extends State<SignUpPage> {
 
   void _submitForm() {
     if (_formKey.currentState!.validate()) {
-      // Navigate to homepage
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => MyHomePage()),
-      );
+      // Simulate a data submission process
+      Future.delayed(Duration(seconds: 2), () {
+        // After the data is submitted, navigate to the login page
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => LoginPage()),
+        );
+      });
     }
   }
 
