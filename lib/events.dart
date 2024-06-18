@@ -194,8 +194,8 @@ class EventCard extends StatelessWidget {
                     },
                     child: Text('RSVP'),
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.purple,
-                      onPrimary: Colors.white,
+                      foregroundColor: Colors.white,
+                      backgroundColor: Colors.purple,
                     ),
                   ),
                   IconButton(
@@ -274,8 +274,8 @@ class EventDetailsPage extends StatelessWidget {
               },
               child: Text('Add to Calendar'),
               style: ElevatedButton.styleFrom(
-                primary: Colors.purple,
-                onPrimary: Colors.white,
+                foregroundColor: Colors.white,
+                backgroundColor: Colors.purple,
               ),
             ),
             SizedBox(height: 20),

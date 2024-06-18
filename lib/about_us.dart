@@ -75,8 +75,8 @@ class AboutUsPage extends StatelessWidget {
   Widget _buildLegalInfoButton(BuildContext context) {
     return Center(
       child: IconButton(
-        icon: Image.asset('assets/court_of_arms.png'),
-        iconSize: 100,
+        icon: SizedBox(child: Image.asset('images/legalimage.png')),
+        iconSize: 20,
         onPressed: () {
           Navigator.push(
             context,
