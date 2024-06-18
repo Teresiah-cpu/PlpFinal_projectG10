@@ -35,7 +35,8 @@ class _LoginPageState extends State<LoginPage> {
       // If the form is valid, navigate to the homepage
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => MyHomePage()), // takes you to homepage
+        MaterialPageRoute(
+            builder: (context) => MyHomePage()), // takes you to homepage
       );
     }
   }
@@ -166,7 +167,8 @@ class _LoginPageState extends State<LoginPage> {
                   ElevatedButton(
                     onPressed: () => signUserIn(context),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF6A1B9A)), // Purple color
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          Color(0xFF6A1B9A)), // Purple color
                       padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
                         EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                       ),
@@ -204,12 +206,14 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => SignUpPage()), // signup page
+                        MaterialPageRoute(
+                            builder: (context) => SignUpPage()), // signup page
                       );
                     },
                     child: Text(
                       'Not a member? Register now',
-                      style: TextStyle(color: Color(0xFF6A1B9A)), // Purple color
+                      style:
+                          TextStyle(color: Color(0xFF6A1B9A)), // Purple color
                     ),
                   ),
                 ],

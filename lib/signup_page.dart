@@ -49,7 +49,8 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sign Up', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+        title: Text('Sign Up',
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
         backgroundColor: Color(0xFF6A1B9A), // Purple color
         elevation: 0,
       ),
@@ -130,7 +131,8 @@ class _SignUpPageState extends State<SignUpPage> {
                 ElevatedButton(
                   onPressed: _submitForm,
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(Color(0xFF6A1B9A)), // Purple color
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        Color(0xFF6A1B9A)), // Purple color
                     shape: MaterialStateProperty.all<OutlinedBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
@@ -154,7 +156,9 @@ class _SignUpPageState extends State<SignUpPage> {
                     },
                     child: Text(
                       'Already have an account? Login',
-                      style: TextStyle(color: Color(0xFF6A1B9A), fontSize: 16), // Purple color
+                      style: TextStyle(
+                          color: Color(0xFF6A1B9A),
+                          fontSize: 16), // Purple color
                     ),
                   ),
                 ),
