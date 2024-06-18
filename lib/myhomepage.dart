@@ -136,7 +136,7 @@ class HomeContent extends StatelessWidget {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.purple,
+                  primary: Colors.purple,
                     padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                     textStyle: TextStyle(fontSize: 16),
                   ),
