@@ -5,12 +5,12 @@
 import FlutterMacOS
 import Foundation
 
-import location
 import file_selector_macos
-import path_provider_macos
+import location
+import path_provider_foundation
 
 func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
-  LocationPlugin.register(with: registry.registrar(forPlugin: "LocationPlugin"))
   FileSelectorPlugin.register(with: registry.registrar(forPlugin: "FileSelectorPlugin"))
+  LocationPlugin.register(with: registry.registrar(forPlugin: "LocationPlugin"))
   PathProviderPlugin.register(with: registry.registrar(forPlugin: "PathProviderPlugin"))
 }

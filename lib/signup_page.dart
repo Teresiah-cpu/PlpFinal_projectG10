@@ -80,53 +80,11 @@ class _SignUpPageState extends State<SignUpPage> {
                       borderRadius: BorderRadius.circular(12.0),
                     ),
                   ),
-<<<<<<< HEAD
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your full name';
                     }
                     return null;
-=======
-                ),
-              ),
-              SizedBox(height: 15),
-              TextFormField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  labelText: 'Password',
-                  prefixIcon: Icon(Icons.lock),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12.0),
-                  ),
-                ),
-              ),
-              SizedBox(height: 30),
-              ElevatedButton(
-                onPressed: () {
-                  // Navigate to homepage
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => MyHomePage()),
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(vertical: 15), backgroundColor: Color(0xFF6A1B9A),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ), // Purple color
-                ),
-                child: Text('Sign Up', style: TextStyle(fontSize: 18)),
-              ),
-              SizedBox(height: 20),
-              Center(
-                child: TextButton(
-                  onPressed: () {
-                    // Navigate to login page
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(builder: (context) => LoginPage()),
-                    );
->>>>>>> Ruth
                   },
                 ),
                 SizedBox(height: 15),

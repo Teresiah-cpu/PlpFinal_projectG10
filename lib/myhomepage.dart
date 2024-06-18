@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'about_us.dart'; // Import the AboutUsPage
 import 'events.dart'; // Import the EventsPage
-<<<<<<< HEAD
 import 'get_involved.dart'; // Import the GetInvolvedPage
-=======
 import 'educational_content.dart';
 import 'settings.dart';
->>>>>>> Ruth
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -37,9 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('She Advocates Home'),
-<<<<<<< HEAD
         backgroundColor: Colors.purple,
-=======
         actions: [
           IconButton(
             icon: Icon(Icons.settings),
@@ -48,7 +43,6 @@ class _MyHomePageState extends State<MyHomePage> {
             },
           ),
         ],
->>>>>>> Ruth
       ),
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
@@ -141,7 +135,7 @@ class HomeContent extends StatelessWidget {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.purple,
+                    backgroundColor: Colors.purple,
                     padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                     textStyle: TextStyle(fontSize: 16),
                   ),

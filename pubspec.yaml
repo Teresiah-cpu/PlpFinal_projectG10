@@ -31,7 +31,7 @@ dependencies:
   flutter:
     sdk: flutter
   location: ^5.0.0
-  http: ^0.13.3
+  http: ^1.2.1
   geocoding: ^2.0.5
 
 
