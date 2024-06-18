@@ -14,9 +14,9 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
 
   static final List<Widget> _widgetOptions = <Widget>[
-    HomeContent(), 
+    HomeContent(),
     AboutUsPage(), // The About Us Page
-    EventsPage(),  // The Events Page
+    EventsPage(), // The Events Page
   ];
 
   void _onItemTapped(int index) {
@@ -111,11 +111,12 @@ class HomeContent extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => GetInvolvedPage()),
+                      MaterialPageRoute(
+                          builder: (context) => GetInvolvedPage()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.purple,
+                    backgroundColor: Colors.purple,
                     padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                     textStyle: TextStyle(fontSize: 16),
                   ),

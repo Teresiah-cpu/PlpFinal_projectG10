@@ -29,7 +29,7 @@ class LegalInformationPage extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           _buildSectionHeader('Legal Process Image'),
-          Image.asset('assets/images/legalimage.png'),
+          Container(child: Image.asset('images/legalimage.png')),
         ],
       ),
     );

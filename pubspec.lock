@@ -56,7 +56,7 @@ packages:
       sha256: ba631d1c7f7bef6b729a622b7b752645a2d076dba9976925b8f25725a30e1ee6
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.3"
+    version: "1.0.8"
   fake_async:
     dependency: transitive
     description:
@@ -100,28 +100,32 @@ packages:
     dependency: "direct main"
     description:
       name: geocoding
-      url: "https://pub.dartlang.org"
+      sha256: d580c801cba9386b4fac5047c4c785a4e19554f46be42f4f5e5b7deacd088a66
+      url: "https://pub.dev"
     source: hosted
-    version: "2.2.2"
+    version: "3.0.0"
   geocoding_android:
     dependency: transitive
     description:
       name: geocoding_android
-      url: "https://pub.dartlang.org"
+      sha256: "1b13eca79b11c497c434678fed109c2be020b158cec7512c848c102bc7232603"
+      url: "https://pub.dev"
     source: hosted
     version: "3.3.1"
   geocoding_ios:
     dependency: transitive
     description:
       name: geocoding_ios
-      url: "https://pub.dartlang.org"
+      sha256: "94ddba60387501bd1c11e18dca7c5a9e8c645d6e3da9c38b9762434941870c24"
+      url: "https://pub.dev"
     source: hosted
-    version: "2.3.0"
+    version: "3.0.1"
   geocoding_platform_interface:
     dependency: transitive
     description:
       name: geocoding_platform_interface
-      url: "https://pub.dartlang.org"
+      sha256: "8c2c8226e5c276594c2e18bfe88b19110ed770aeb7c1ab50ede570be8b92229b"
+      url: "https://pub.dev"
     source: hosted
     version: "3.2.0"
   google_fonts:
@@ -152,9 +156,34 @@ packages:
     dependency: transitive
     description:
       name: js
-      url: "https://pub.dartlang.org"
+      sha256: f2c445dce49627136094980615a031419f7f3eb393237e4ecd97ac15dea343f3
+      url: "https://pub.dev"
     source: hosted
-    version: "0.6.4"
+    version: "0.6.7"
+  leak_tracker:
+    dependency: transitive
+    description:
+      name: leak_tracker
+      sha256: "7f0df31977cb2c0b88585095d168e689669a2cc9b97c309665e3386f3e9d341a"
+      url: "https://pub.dev"
+    source: hosted
+    version: "10.0.4"
+  leak_tracker_flutter_testing:
+    dependency: transitive
+    description:
+      name: leak_tracker_flutter_testing
+      sha256: "06e98f569d004c1315b991ded39924b21af84cf14cc94791b8aea337d25b57f8"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.3"
+  leak_tracker_testing:
+    dependency: transitive
+    description:
+      name: leak_tracker_testing
+      sha256: "6ba465d5d76e67ddf503e1161d1f4a6bc42306f9d66ca1e8f079a47290fb06d3"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.1"
   lints:
     dependency: transitive
     description:
@@ -162,28 +191,31 @@ packages:
       sha256: "976c774dd944a42e83e2467f4cc670daef7eed6295b10b36ae8c85bcbf828235"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.1"
+    version: "4.0.0"
   location:
     dependency: "direct main"
     description:
       name: location
-      url: "https://pub.dartlang.org"
+      sha256: "37ffdadcd4b1498b769824f45ebb4de8ed46663a4a67ac27b33a590ee486579f"
+      url: "https://pub.dev"
     source: hosted
-    version: "5.0.0"
+    version: "6.0.2"
   location_platform_interface:
     dependency: transitive
     description:
       name: location_platform_interface
-      url: "https://pub.dartlang.org"
+      sha256: "2ecde6bb0f88032b0bbbde37e18975b4468711dd92619c2235cc0c0ee93b4b8e"
+      url: "https://pub.dev"
     source: hosted
-    version: "3.0.0"
+    version: "4.0.0"
   location_web:
     dependency: transitive
     description:
       name: location_web
-      url: "https://pub.dartlang.org"
+      sha256: "15ad7b4c8a9f55abee513373755e093a40c04d7e24fc1b4f89676fe99523d034"
+      url: "https://pub.dev"
     source: hosted
-    version: "4.0.0"
+    version: "5.0.1"
   matcher:
     dependency: transitive
     description:
@@ -223,22 +255,23 @@ packages:
       sha256: c9e7d3a4cd1410877472158bee69963a4579f78b68c65a2b7d40d1a7a88bb161
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.11"
+    version: "2.1.3"
   path_provider_android:
     dependency: transitive
     description:
       name: path_provider_android
-      sha256: "9c96da072b421e98183f9ea7464898428e764bc0ce5567f27ec8693442e72514"
+      sha256: bca87b0165ffd7cdb9cad8edd22d18d2201e886d9a9f19b4fb3452ea7df3a72a
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.9"
-  path_provider_ios:
+    version: "2.2.6"
+  path_provider_foundation:
     dependency: transitive
     description:
-      name: path_provider_ios
-      url: "https://pub.dartlang.org"
+      name: path_provider_foundation
+      sha256: f234384a3fdd67f989b4d54a5d73ca2a6c422fa55ae694381ae0f4375cd1ea16
+      url: "https://pub.dev"
     source: hosted
-    version: "2.0.11"
+    version: "2.4.0"
   path_provider_linux:
     dependency: transitive
     description:
@@ -246,14 +279,7 @@ packages:
       sha256: f7a1fe3a634fe7734c8d3f2766ad746ae2a2884abe22e241a8b301bf5cac3279
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.10"
-  path_provider_macos:
-    dependency: transitive
-    description:
-      name: path_provider_macos
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.0.3"
+    version: "2.2.1"
   path_provider_platform_interface:
     dependency: transitive
     description:
@@ -261,7 +287,7 @@ packages:
       sha256: "88f5779f72ba699763fa3a3b06aa4bf6de76c8e5de842cf6f29e2e06476c2334"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.0"
+    version: "2.1.2"
   path_provider_windows:
     dependency: transitive
     description:
