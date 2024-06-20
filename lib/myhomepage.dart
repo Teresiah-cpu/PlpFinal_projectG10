@@ -40,6 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
             icon: Icon(Icons.settings),
             onPressed: () {
               Navigator.pushNamed(context, '/settings'); // Navigate to SettingsScreen
+              //Colors.purple;
             },
           ),
         ],
@@ -49,11 +50,13 @@ class _MyHomePageState extends State<MyHomePage> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
+            backgroundColor: Colors.purple,
             label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.info),
             label: 'About Us',
+            backgroundColor: Colors.purple,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.event),
@@ -69,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.purple,
+        //selectedItemColor: Colors.purple,
         onTap: _onItemTapped,
       ),
     );
