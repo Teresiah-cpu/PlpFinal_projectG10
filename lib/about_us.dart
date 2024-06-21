@@ -45,10 +45,10 @@ class AboutUsPage extends StatelessWidget {
   }
 
   Widget _buildImageHeader() {
-    return Center(
+    return AspectRatio(
+      aspectRatio: 16 / 9, // Adjust the aspect ratio as needed
       child: Image.asset(
         'assets/images/about_us_header.jpg', // header image 
-        height: 200,
         fit: BoxFit.cover,
       ),
     );
