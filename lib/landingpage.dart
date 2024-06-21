@@ -103,7 +103,7 @@ class LandingPage extends StatelessWidget {
                     color: Colors.red, // Red color for SOS button
                   ),
                   child: const Text(
-                    "SOS",
+                    "Send an alert",
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,

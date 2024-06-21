@@ -103,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                   ElevatedButton(
                     onPressed: () => signUserIn(context),
                     style: ElevatedButton.styleFrom(
-                      primary: Color(0xFF6A1B9A), // Purple color
+                      backgroundColor: Color(0xFF6A1B9A), // Purple color
                       padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16),
