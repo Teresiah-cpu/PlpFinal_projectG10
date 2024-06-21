@@ -120,7 +120,7 @@ class AboutUsPage extends StatelessWidget {
         },
         child: Text('I\'m Hurt - Start Process'),
         style: ElevatedButton.styleFrom(
-          foregroundColor: Colors.white, backgroundColor: Colors.purple,
+          onPrimary: Colors.white, primary: Colors.purple,
           padding: EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
         ),
       ),

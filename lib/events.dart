@@ -226,7 +226,7 @@ class EventCard extends StatelessWidget {
                     },
                     child: Text('RSVP'),
                     style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.white, backgroundColor: Colors.purple,
+                      onPrimary: Colors.white, primary: Colors.purple,
                     ),
                   ),
                   IconButton(
@@ -381,7 +381,7 @@ class EventDetailsPage extends StatelessWidget {
               icon: Icon(Icons.calendar_today),
               label: Text('Add to Calendar'),
               style: ElevatedButton.styleFrom(
-                foregroundColor: Colors.white, backgroundColor: Colors.purple,
+                onPrimary: Colors.white, primary: Colors.purple,
               ),
             ),
             SizedBox(height: 20),
@@ -393,19 +393,38 @@ class EventDetailsPage extends StatelessWidget {
                 color: Colors.purple,
               ),
             ),
+            SizedBox(height: 10),
+            TextField(
+              decoration: InputDecoration(
+                labelText: 'Add a comment',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                prefixIcon: Icon(Icons.comment),
+              ),
+            ),
+            SizedBox(height: 20),
             ListView.builder(
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               itemCount: 5,
               itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text(
-                    'User $index',
-                    style: GoogleFonts.lato(),
-                  ),
-                  subtitle: Text(
-                    'This is a comment/review.',
-                    style: GoogleFonts.lato(),
+                return Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      backgroundImage: AssetImage('assets/images/avatar_placeholder.png'),
+                    ),
+                    title: Text(
+                      'User $index',
+                      style: GoogleFonts.lato(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    subtitle: Text(
+                      'This is a comment/review.',
+                      style: GoogleFonts.lato(),
+                    ),
                   ),
                 );
               },
