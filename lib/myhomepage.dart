@@ -19,9 +19,9 @@ class _MyHomePageState extends State<MyHomePage> {
   static final List<Widget> _widgetOptions = <Widget>[
     HomeContent(),
     AboutUsPage(), // The About Us Page
-    EventsPage(),  // The Events Page
-    EducationalContent(), 
-    SettingsScreen(),  // The Settings Page
+    EventsPage(), // The Events Page
+    EducationalContent(),
+    SettingsScreen(), // The Settings Page
   ];
 
   void _onItemTapped(int index) {
@@ -41,7 +41,8 @@ class _MyHomePageState extends State<MyHomePage> {
             icon: Icon(Icons.settings),
             tooltip: 'Settings',
             onPressed: () {
-              Navigator.pushNamed(context, '/settings'); // Navigate to SettingsScreen
+              Navigator.pushNamed(
+                  context, '/settings'); // Navigate to SettingsScreen
             },
           ),
         ],
@@ -76,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
         currentIndex: _selectedIndex,
-       // selectedItemColor: Colors.purple,
+        // selectedItemColor: Colors.purple,
         onTap: _onItemTapped,
       ),
       floatingActionButton: FloatingActionButton(
@@ -186,12 +187,14 @@ class HomeContent extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => GetInvolvedPage()),
+                          MaterialPageRoute(
+                              builder: (context) => GetInvolvedPage()),
                         );
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.purple,
-                        padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                         textStyle: TextStyle(fontSize: 16),
                       ),
                       child: Text('Get Involved'),

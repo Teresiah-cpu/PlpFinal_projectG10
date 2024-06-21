@@ -48,7 +48,7 @@ class AboutUsPage extends StatelessWidget {
     return AspectRatio(
       aspectRatio: 16 / 9, // Adjust the aspect ratio as needed
       child: Image.asset(
-        'assets/images/about_us_header.jpg', // header image 
+        'assets/images/about_us_header.jpg', // header image
         fit: BoxFit.cover,
       ),
     );
@@ -59,7 +59,8 @@ class AboutUsPage extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 8.0),
       child: Text(
         title,
-        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.purple),
+        style: TextStyle(
+            fontSize: 20, fontWeight: FontWeight.bold, color: Colors.purple),
       ),
     );
   }
@@ -120,7 +121,8 @@ class AboutUsPage extends StatelessWidget {
         },
         child: Text('I\'m Hurt - Start Process'),
         style: ElevatedButton.styleFrom(
-          onPrimary: Colors.white, primary: Colors.purple,
+          foregroundColor: Colors.white,
+          backgroundColor: Colors.purple,
           padding: EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
         ),
       ),
