@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart'; // Import Google Fonts
 import 'about_us.dart'; // Import the AboutUsPage
 import 'events.dart'; // Import the EventsPage
 import 'get_involved.dart'; // Import the GetInvolvedPage
@@ -38,14 +39,17 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: [
           IconButton(
             icon: Icon(Icons.settings),
+            tooltip: 'Settings',
             onPressed: () {
               Navigator.pushNamed(context, '/settings'); // Navigate to SettingsScreen
-              //Colors.purple;
             },
           ),
         ],
       ),
-      body: _widgetOptions.elementAt(_selectedIndex),
+      body: AnimatedSwitcher(
+        duration: Duration(milliseconds: 300),
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -75,6 +79,17 @@ class _MyHomePageState extends State<MyHomePage> {
        // selectedItemColor: Colors.purple,
         onTap: _onItemTapped,
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => GetInvolvedPage()),
+          );
+        },
+        backgroundColor: Colors.purple,
+        child: Icon(Icons.volunteer_activism),
+        tooltip: 'Get Involved',
+      ),
     );
   }
 }
@@ -98,67 +113,71 @@ class HomeContent extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Container(
-                    padding: EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black12,
-                          blurRadius: 10,
-                          spreadRadius: 1,
-                        ),
-                      ],
+                  Card(
+                    elevation: 4,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
                     ),
-                    child: Column(
-                      children: [
-                        Text(
-                          'Welcome to She Advocates!',
-                          style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.purple,
+                    child: Padding(
+                      padding: EdgeInsets.all(16),
+                      child: Column(
+                        children: [
+                          Text(
+                            'Welcome to She Advocates!',
+                            style: GoogleFonts.lato(
+                              textStyle: TextStyle(
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.purple,
+                              ),
+                            ),
+                            textAlign: TextAlign.center,
                           ),
-                          textAlign: TextAlign.center,
-                        ),
-                        SizedBox(height: 20),
-                        // Adjust Image Widgets with AspectRatio
-                        AspectRatio(
-                          aspectRatio: 16 / 9, // Setting aspect ratio
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: Image.network(
-                              'https://media.istockphoto.com/id/1871948873/photo/group-of-businesswomen-meeting-in-the-office.webp?b=1&s=170667a&w=0&k=20&c=UVJ8wuJLyk4kxVLv8WthRiS4eJrbRETCdUtaNlZv1x0=',
-                              fit: BoxFit.cover,
+                          SizedBox(height: 20),
+                          AspectRatio(
+                            aspectRatio: 16 / 9,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: Image.network(
+                                'https://media.istockphoto.com/id/1871948873/photo/group-of-businesswomen-meeting-in-the-office.webp?b=1&s=170667a&w=0&k=20&c=UVJ8wuJLyk4kxVLv8WthRiS4eJrbRETCdUtaNlZv1x0=',
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
-                        ),
-                        SizedBox(height: 20),
-                        Text(
-                          'Empowering Women, One Step at a Time',
-                          style: TextStyle(fontSize: 18, fontStyle: FontStyle.italic),
-                          textAlign: TextAlign.center,
-                        ),
-                        SizedBox(height: 20),
-                        // Adjust Image Widgets with AspectRatio
-                        AspectRatio(
-                          aspectRatio: 16 / 9, // Set aspect ratio
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: Image.network(
-                              'https://media.istockphoto.com/id/1950525700/photo/multiracial-women-posing-in-the-office-while-looking-into-the-camera.jpg?s=612x612&w=0&k=20&c=2fkz8aIl3CHC09cB2Q8ruSGgjTrI7OQgrxirS7Q5Yg0=',
-                              fit: BoxFit.cover,
+                          SizedBox(height: 20),
+                          Text(
+                            'Empowering Women, One Step at a Time',
+                            style: GoogleFonts.lato(
+                              textStyle: TextStyle(
+                                fontSize: 18,
+                                fontStyle: FontStyle.italic,
+                              ),
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(height: 20),
+                          AspectRatio(
+                            aspectRatio: 16 / 9,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: Image.network(
+                                'https://media.istockphoto.com/id/1950525700/photo/multiracial-women-posing-in-the-office-while-looking-into-the-camera.jpg?s=612x612&w=0&k=20&c=2fkz8aIl3CHC09cB2Q8ruSGgjTrI7OQgrxirS7Q5Yg0=',
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
-                        ),
-                        SizedBox(height: 20),
-                        Text(
-                          'Join us in our journey to uplift and support women in all spheres of life.',
-                          style: TextStyle(fontSize: 16),
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
+                          SizedBox(height: 20),
+                          Text(
+                            'Join us in our journey to uplift and support women in all spheres of life.',
+                            style: GoogleFonts.lato(
+                              textStyle: TextStyle(
+                                fontSize: 16,
+                              ),
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(height: 20),
@@ -167,8 +186,7 @@ class HomeContent extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => GetInvolvedPage()),
+                          MaterialPageRoute(builder: (context) => GetInvolvedPage()),
                         );
                       },
                       style: ElevatedButton.styleFrom(
