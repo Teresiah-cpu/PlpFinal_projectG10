@@ -52,7 +52,7 @@ class JoinMembershipPage extends StatelessWidget {
                     // Handle membership sign-up
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.purple,
+                   primary: Colors.purple,
                   ),
                   child: Text('Join Now'),
                 ),
