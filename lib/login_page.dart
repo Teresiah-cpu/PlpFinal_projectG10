@@ -6,7 +6,6 @@ import 'components/mytextfield.dart';
 // ignore: unused_import
 import 'package:gbvapp/components/mybutton.dart';
 
-
 class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);
 
@@ -103,8 +102,9 @@ class _LoginPageState extends State<LoginPage> {
                   ElevatedButton(
                     onPressed: () => signUserIn(context),
                     style: ElevatedButton.styleFrom(
-                      primary: Color(0xFF6A1B9A), // Purple color
-                      padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                      backgroundColor: Color(0xFF6A1B9A), // Purple color
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16),
                       ),

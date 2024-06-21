@@ -226,7 +226,8 @@ class EventCard extends StatelessWidget {
                     },
                     child: Text('RSVP'),
                     style: ElevatedButton.styleFrom(
-                      onPrimary: Colors.white, primary: Colors.purple,
+                      foregroundColor: Colors.white,
+                      backgroundColor: Colors.purple,
                     ),
                   ),
                   IconButton(
@@ -297,7 +298,8 @@ class EventDetailsPage extends StatelessWidget {
           builder: (BuildContext context) {
             return AlertDialog(
               title: Text('Failed to add event to calendar'),
-              content: Text('There was an error adding this event to your calendar.'),
+              content: Text(
+                  'There was an error adding this event to your calendar.'),
               actions: <Widget>[
                 TextButton(
                   child: Text('OK'),
@@ -381,7 +383,8 @@ class EventDetailsPage extends StatelessWidget {
               icon: Icon(Icons.calendar_today),
               label: Text('Add to Calendar'),
               style: ElevatedButton.styleFrom(
-                onPrimary: Colors.white, primary: Colors.purple,
+                foregroundColor: Colors.white,
+                backgroundColor: Colors.purple,
               ),
             ),
             SizedBox(height: 20),
@@ -413,7 +416,8 @@ class EventDetailsPage extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 8.0),
                   child: ListTile(
                     leading: CircleAvatar(
-                      backgroundImage: AssetImage('assets/images/avatar_placeholder.png'),
+                      backgroundImage:
+                          AssetImage('assets/images/avatar_placeholder.png'),
                     ),
                     title: Text(
                       'User $index',
