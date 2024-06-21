@@ -10,7 +10,7 @@ class GetInvolvedPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Get Involved'),
-        backgroundColor: Colors.purple,
+        backgroundColor: Colors.white,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
