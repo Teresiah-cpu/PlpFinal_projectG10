@@ -1,5 +1,7 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:add_2_calendar/add_2_calendar.dart';
 
 class EventsPage extends StatefulWidget {
   @override
@@ -11,7 +13,7 @@ class _EventsPageState extends State<EventsPage> {
     {
       'title': 'Event 1',
       'description': 'Women empowerment day event',
-      'date': '30th June, 2024',
+      'date': '2024-06-30',
       'location': 'Lower Kabete, Spring Valley Road',
       'image': 'assets/images/women1.jpg',
       'category': 'Empowerment',
@@ -19,7 +21,7 @@ class _EventsPageState extends State<EventsPage> {
     {
       'title': 'Event 2',
       'description': 'Meet and greet event.',
-      'date': 'June 22, 2024',
+      'date': '2024-06-22',
       'location': 'KICC',
       'image': 'assets/images/women1.jpg',
       'category': 'Networking',
@@ -27,7 +29,7 @@ class _EventsPageState extends State<EventsPage> {
     {
       'title': 'Event 3',
       'description': 'Mental health awareness meet up.',
-      'date': 'June 25, 2024',
+      'date': '2024-06-25',
       'location': 'Nairobi Kenya',
       'image': 'assets/images/women1.jpg',
       'category': 'Health',
@@ -117,6 +119,34 @@ class EventCard extends StatelessWidget {
     required this.category,
   });
 
+  Future<void> showRSVPDialog(BuildContext context) async {
+    return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('RSVP Confirmation'),
+          content: Text('Do you want to RSVP to this event?'),
+          actions: <Widget>[
+            TextButton(
+              child: Text('Cancel'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            TextButton(
+              child: Text('RSVP'),
+              onPressed: () {
+                // Handle RSVP action here
+                // For now, just close the dialog
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -192,7 +222,7 @@ class EventCard extends StatelessWidget {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      // Handle RSVP action
+                      showRSVPDialog(context);
                     },
                     child: Text('RSVP'),
                     style: ElevatedButton.styleFrom(
@@ -230,6 +260,78 @@ class EventDetailsPage extends StatelessWidget {
     required this.location,
     required this.image,
   });
+
+  Event buildEvent() {
+    return Event(
+      title: title,
+      description: description,
+      location: location,
+      startDate: DateTime.parse(date),
+      endDate: DateTime.parse(date).add(Duration(hours: 2)),
+    );
+  }
+
+  Future<void> addToCalendar(BuildContext context) async {
+    try {
+      bool success = await Add2Calendar.addEvent2Cal(buildEvent());
+      if (success) {
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text('Event added to calendar'),
+              content: Text('You have added this event to your calendar.'),
+              actions: <Widget>[
+                TextButton(
+                  child: Text('OK'),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ],
+            );
+          },
+        );
+      } else {
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text('Failed to add event to calendar'),
+              content: Text('There was an error adding this event to your calendar.'),
+              actions: <Widget>[
+                TextButton(
+                  child: Text('OK'),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+              ],
+            );
+          },
+        );
+      }
+    } catch (e) {
+      print('Error adding event to calendar: $e');
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Error'),
+            content: Text('Error adding event to calendar.'),
+            actions: <Widget>[
+              TextButton(
+                child: Text('OK'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        },
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -273,11 +375,12 @@ class EventDetailsPage extends StatelessWidget {
               style: TextStyle(fontSize: 18),
             ),
             SizedBox(height: 20),
-            ElevatedButton(
+            ElevatedButton.icon(
               onPressed: () {
-                // Handle add to calendar action
+                addToCalendar(context);
               },
-              child: Text('Add to Calendar'),
+              icon: Icon(Icons.calendar_today),
+              label: Text('Add to Calendar'),
               style: ElevatedButton.styleFrom(
                 primary: Colors.purple,
                 onPrimary: Colors.white,
@@ -300,20 +403,11 @@ class EventDetailsPage extends StatelessWidget {
                 return ListTile(
                   title: Text(
                     'User $index',
-                    style: GoogleFonts.lato(
-                      textStyle: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                    style: GoogleFonts.lato(),
                   ),
                   subtitle: Text(
                     'This is a comment/review.',
-                    style: GoogleFonts.lato(
-                      textStyle: TextStyle(
-                        fontSize: 16,
-                      ),
-                    ),
+                    style: GoogleFonts.lato(),
                   ),
                 );
               },
