@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class EventsPage extends StatefulWidget {
   @override
@@ -297,8 +298,23 @@ class EventDetailsPage extends StatelessWidget {
               itemCount: 5,
               itemBuilder: (context, index) {
                 return ListTile(
-                  title: Text('User $index'),
-                  subtitle: Text('This is a comment/review.'),
+                  title: Text(
+                    'User $index',
+                    style: GoogleFonts.lato(
+                      textStyle: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  subtitle: Text(
+                    'This is a comment/review.',
+                    style: GoogleFonts.lato(
+                      textStyle: TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
                 );
               },
             ),
