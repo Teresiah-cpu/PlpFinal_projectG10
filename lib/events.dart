@@ -56,10 +56,8 @@ class _EventsPageState extends State<EventsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Events Page'),
-        // Fix for AppBar background color
+        title: Text('Events'),
         backgroundColor: Colors.purple,
-        // Replace deprecated backgroundColor with background
         foregroundColor: Colors.white,
         elevation: 4.0,
       ),
@@ -71,36 +69,28 @@ class _EventsPageState extends State<EventsPage> {
               onChanged: _filterEvents,
               decoration: InputDecoration(
                 labelText: 'Search Events',
-                border: OutlineInputBorder(),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
                 prefixIcon: Icon(Icons.search),
               ),
             ),
           ),
           Expanded(
-            child: SingleChildScrollView(
+            child: ListView.builder(
               padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Upcoming Events',
-                    style: TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.purple,
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  ...filteredEvents.map((event) => EventCard(
-                        title: event['title']!,
-                        description: event['description']!,
-                        date: event['date']!,
-                        location: event['location']!,
-                        image: event['image']!,
-                        category: event['category']!,
-                      )),
-                ],
-              ),
+              itemCount: filteredEvents.length,
+              itemBuilder: (context, index) {
+                final event = filteredEvents[index];
+                return EventCard(
+                  title: event['title']!,
+                  description: event['description']!,
+                  date: event['date']!,
+                  location: event['location']!,
+                  image: event['image']!,
+                  category: event['category']!,
+                );
+              },
             ),
           ),
         ],
@@ -131,6 +121,9 @@ class EventCard extends StatelessWidget {
     return Card(
       elevation: 4,
       margin: EdgeInsets.symmetric(vertical: 10),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15),
+      ),
       child: InkWell(
         onTap: () {
           Navigator.push(
@@ -151,7 +144,10 @@ class EventCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.asset(image, fit: BoxFit.cover),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: Image.asset(image, fit: BoxFit.cover),
+              ),
               SizedBox(height: 10),
               Text(
                 title,
@@ -176,13 +172,18 @@ class EventCard extends StatelessWidget {
                 style: TextStyle(fontSize: 16),
               ),
               SizedBox(height: 10),
-              Text(
-                date,
-                style: TextStyle(fontSize: 16, color: Colors.grey),
-              ),
-              Text(
-                location,
-                style: TextStyle(fontSize: 16, color: Colors.grey),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    date,
+                    style: TextStyle(fontSize: 16, color: Colors.grey),
+                  ),
+                  Text(
+                    location,
+                    style: TextStyle(fontSize: 16, color: Colors.grey),
+                  ),
+                ],
               ),
               SizedBox(height: 10),
               Row(
@@ -194,7 +195,8 @@ class EventCard extends StatelessWidget {
                     },
                     child: Text('RSVP'),
                     style: ElevatedButton.styleFrom(
-                      onPrimary: Colors.white, primary: Colors.purple,
+                      primary: Colors.purple,
+                      onPrimary: Colors.white,
                     ),
                   ),
                   IconButton(
@@ -242,7 +244,10 @@ class EventDetailsPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset(image, fit: BoxFit.cover),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(15),
+              child: Image.asset(image, fit: BoxFit.cover),
+            ),
             SizedBox(height: 20),
             Text(
               title,
@@ -273,7 +278,8 @@ class EventDetailsPage extends StatelessWidget {
               },
               child: Text('Add to Calendar'),
               style: ElevatedButton.styleFrom(
-                onPrimary: Colors.white, primary: Colors.purple,
+                primary: Colors.purple,
+                onPrimary: Colors.white,
               ),
             ),
             SizedBox(height: 20),
