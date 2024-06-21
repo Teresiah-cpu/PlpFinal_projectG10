@@ -52,7 +52,6 @@ class VolunteerPage extends StatelessWidget {
                     // Handle volunteer sign-up
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.purple,
                   ),
                   child: Text('Register to Volunteer'),
                 ),
