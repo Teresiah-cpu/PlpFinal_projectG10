@@ -19,6 +19,7 @@ class _LegalProcessPageState extends State<LegalProcessPage> {
         currentStep: _currentStep,
         onStepContinue: () {
           if (_currentStep < _getSteps().length - 1) {
+            
             setState(() {
               _currentStep += 1;
             });

@@ -226,8 +226,208 @@ class CommunityForumsScreen extends StatelessWidget {
         title: Text('Community Forums'),
         backgroundColor: Colors.purple,
       ),
-      body: Center(
-        child: Text('Community Forums Screen'),
+      body: CommunityForumsBody(),
+    );
+  }
+}
+
+class CommunityForumsBody extends StatelessWidget {
+  final List<Map<String, String>> categories = [
+    {
+      'title': 'General Discussions',
+      'description': 'Talk about anything related to women empowerment and support.',
+    },
+    {
+      'title': 'Support and Advice',
+      'description': 'Ask for advice and support from the community.',
+    },
+    {
+      'title': 'Success Stories',
+      'description': 'Share your success stories and inspire others.',
+    },
+    {
+      'title': 'Events and Meetups',
+      'description': 'Discuss upcoming events and meetups.',
+    },
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: ListView.builder(
+        itemCount: categories.length,
+        itemBuilder: (context, index) {
+          return Card(
+            elevation: 4,
+            margin: const EdgeInsets.symmetric(vertical: 8.0),
+            child: ListTile(
+              title: Text(
+                categories[index]['title']!,
+                style: GoogleFonts.lato(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.purple,
+                ),
+              ),
+              subtitle: Text(
+                categories[index]['description']!,
+                style: GoogleFonts.lato(fontSize: 16),
+              ),
+              trailing: Icon(Icons.arrow_forward),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ThreadsScreen(categoryTitle: categories[index]['title']!),
+                  ),
+                );
+              },
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+
+class ThreadsScreen extends StatelessWidget {
+  final String categoryTitle;
+
+  ThreadsScreen({required this.categoryTitle});
+
+  final List<Map<String, String>> threads = [
+    {
+      'title': 'Welcome to the General Discussions',
+      'creator': 'Admin',
+      'createdAt': '2024-01-01',
+    },
+    {
+      'title': 'How to Get Involved?',
+      'creator': 'User1',
+      'createdAt': '2024-01-02',
+    },
+    {
+      'title': 'Share Your Success Story',
+      'creator': 'User2',
+      'createdAt': '2024-01-03',
+    },
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(categoryTitle),
+        backgroundColor: Colors.purple,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView.builder(
+          itemCount: threads.length,
+          itemBuilder: (context, index) {
+            return Card(
+              elevation: 4,
+              margin: const EdgeInsets.symmetric(vertical: 8.0),
+              child: ListTile(
+                title: Text(
+                  threads[index]['title']!,
+                  style: GoogleFonts.lato(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.purple,
+                  ),
+                ),
+                subtitle: Text(
+                  'Created by ${threads[index]['creator']} on ${threads[index]['createdAt']}',
+                  style: GoogleFonts.lato(fontSize: 16),
+                ),
+                trailing: Icon(Icons.arrow_forward),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => PostsScreen(threadTitle: threads[index]['title']!),
+                    ),
+                  );
+                },
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class PostsScreen extends StatelessWidget {
+  final String threadTitle;
+
+  PostsScreen({required this.threadTitle});
+
+  final List<Map<String, String>> posts = [
+    {
+      'content': 'Welcome to the community! Feel free to introduce yourself.',
+      'creator': 'Admin',
+      'createdAt': '2024-01-01',
+    },
+    {
+      'content': 'Hi everyone! I am excited to be here and support the cause.',
+      'creator': 'User1',
+      'createdAt': '2024-01-02',
+    },
+    {
+      'content': 'Looking forward to connecting with like-minded individuals.',
+      'creator': 'User2',
+      'createdAt': '2024-01-03',
+    },
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(threadTitle),
+        backgroundColor: Colors.purple,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Expanded(
+              child: ListView.builder(
+                itemCount: posts.length,
+                itemBuilder: (context, index) {
+                  return Card(
+                    elevation: 4,
+                    margin: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: ListTile(
+                      title: Text(
+                        posts[index]['content']!,
+                        style: GoogleFonts.lato(fontSize: 16),
+                      ),
+                      subtitle: Text(
+                        'Posted by ${posts[index]['creator']} on ${posts[index]['createdAt']}',
+                        style: GoogleFonts.lato(fontSize: 14),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+            TextField(
+              decoration: InputDecoration(
+                hintText: 'Write a reply...',
+                suffixIcon: IconButton(
+                  icon: Icon(Icons.send),
+                  onPressed: () {
+                    // Add post to Firestore
+                  },
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
