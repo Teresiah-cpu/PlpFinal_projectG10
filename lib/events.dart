@@ -15,7 +15,7 @@ class _EventsPageState extends State<EventsPage> {
       'description': 'Women empowerment day event',
       'date': '2024-06-30',
       'location': 'Lower Kabete, Spring Valley Road',
-      'image': 'assets/images/women1.jpg',
+      'image': 'assets/images/women.png',
       'category': 'Empowerment',
     },
     {
@@ -23,7 +23,7 @@ class _EventsPageState extends State<EventsPage> {
       'description': 'Meet and greet event.',
       'date': '2024-06-22',
       'location': 'KICC',
-      'image': 'assets/images/women1.jpg',
+      'image': 'assets/images/africa.png',
       'category': 'Networking',
     },
     {

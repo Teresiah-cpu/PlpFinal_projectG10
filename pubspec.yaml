@@ -78,6 +78,7 @@ flutter:
     - assets/images/apple.png
     - assets/images/girl2.png
     - assets/images/girl3.png
+    - assets/images/women.png
     - assets/images/women1.jpg
     - assets/images/women2.jpg
     - assets/images/women3.jpg
@@ -88,6 +89,7 @@ flutter:
     - assets/images/mental_health1.jpeg
     - assets/images/POSTER_1.jpeg
     - assets/images/health.jpeg
+    - assets/images/africa.png
 
 
     
