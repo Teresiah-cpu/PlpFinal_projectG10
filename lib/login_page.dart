@@ -75,7 +75,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                  const SizedBox(height: 25),
                   Text(
-                    'Or sign in with your email',
+                    'Sign in with your email',
                     style: TextStyle(fontSize: 14, color: Colors.grey[600]),
                   ),
                   const SizedBox(height: 10),
